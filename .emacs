@@ -6,6 +6,11 @@
 (custom-set-variables
  '(initial-frame-alist (quote ((fullscreen . maximized)))))
 
+;; Disable backup
+(setq backup-inhibited t)
+;; Disable auto save
+(setq auto-save-default nil)
+
 ;; Hide toolbar and scrollbar
 (menu-bar-mode -1)
 (tool-bar-mode -1)
