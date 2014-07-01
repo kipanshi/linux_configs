@@ -40,6 +40,9 @@
 (setq-default indent-tabs-mode nil)    ; use only spaces and no tabs
 (setq default-tab-width 4)
 
+;; Javascript mode indent to 2
+(setq js-indent-level 2)
+
 ;; Column-number-mode
 (column-number-mode)
 
@@ -63,18 +66,9 @@
 
 ;; Flycheck
 (add-hook 'after-init-hook #'global-flycheck-mode)
-(add-hook 'flycheck-mode-hook 'flycheck-color-mode-line-mode)
-(setq flycheck-highlighting-mode 'lines)
-
-;; `(flycheck-error-face
-;;   ((((class color)) (:foreground "#FF6E64" :background "#FF6E64" :weight bold :underline t))))
-;; `(flycheck-warning-face
-;;   ((((class color)) (:foreground "#DEB542" :background "#7B6000" :weight bold :underline t))))
-
 
 ;; Autopair
-(require 'autopair)
-(autopair-global-mode)
+(electric-pair-mode)
 
 ;; Try the hack for theme loading
 ;; color themes
@@ -132,4 +126,5 @@
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
 (load-theme 'tomorrow-night t)
 
-;;; .emacs ends ffhere
+;;; .emacs ends here
+(put 'upcase-region 'disabled nil)
